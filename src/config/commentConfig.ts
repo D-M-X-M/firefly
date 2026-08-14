@@ -8,7 +8,7 @@ export const commentConfig: CommentConfig = {
 	twikoo: {
 		envId: "https://twikoo-backend.netlify.app/.netlify/functions/twiko",
 		// 设置 Twikoo 评论系统语言
-		lang: "zh-CN",
+		lang: "zh-CN",//111
 		// 是否启用文章访问量统计功能
 		visitorCount: true,
 		// Twikoo JS 文件地址，支持 CDN 链接
