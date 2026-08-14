@@ -12,7 +12,7 @@ export const profileConfig: ProfileConfig = {
 	name: "ChenHM",
 
 	// 个人签名
-	bio: "这里是我的的个人博客，分享生活、兴趣、心得和理想。",
+	bio: "生活、兴趣、心得和理想。",
 
 	// 链接配置
 	// 已经预装的图标集：fa7-brands，fa7-regular，fa7-solid，material-symbols，simple-icons

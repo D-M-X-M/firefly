@@ -33,5 +33,8 @@
   "src:content/posts/images/1.avif": "b5b0b3bcb6bbe0e0df",
   "src:content/posts/guide/cover.avif": "c8bca9dde6d2babfb5",
   "src:assets/images/logo/firefly-light.png": "000000000000000000",
-  "src:assets/images/logo/firefly-dark.png": "ffffffffffffffffff"
+  "src:assets/images/logo/firefly-dark.png": "ffffffffffffffffff",
+  "src:assets/images/avatar.jpg": "fdfcfafaf9f9fcfbfa",
+  "src:assets/images/logo/100-light.png": "000000000000000000",
+  "src:assets/images/logo/100-dark.png": "e3e3e3e2e2e2e1e1e1"
 }

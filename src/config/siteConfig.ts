@@ -12,11 +12,11 @@ export const siteConfig: SiteConfig = {
 	subtitle: "dreamer, chaser, and lifelong learner.",
 
 	// 站点 URL
-	site_url: "https://firefly.cuteleaf.cn",
+	site_url: "https://chenhm.pages.dev",
 
 	// 站点描述
 	description:
-		"这里是ChenHM的个人博客，分享生活、兴趣、心得和理想。",
+		"生活、兴趣、心得和理想。",
 
 	// 站点关键词
 	keywords: [
