@@ -588,7 +588,7 @@ const relatedPosts = await getRelatedPosts(entry, 5);
     </a>
   </div>
 
-  <RecommendedPost relatedPosts={relatedPosts} currentPostId={entry.id} />
+  <!-- <RecommendedPost relatedPosts={relatedPosts} currentPostId={entry.id} /> -->
 
   <!-- 评论 -->
   {entry.data.comment && !entry.data.password && <Comment post={entry} />}

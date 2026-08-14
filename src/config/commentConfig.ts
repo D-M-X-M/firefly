@@ -70,7 +70,7 @@ export const commentConfig: CommentConfig = {
 		// 获取 Giscus 评论系统元数据功能
 		emitMetadata: "1",
 		// 获取 Giscus 评论系统输入位置
-		inputPosition: "top",
+		inputPosition: "bottom",
 		// 获取 Giscus 评论系统语言
 		lang: "zh-CN",
 		// 获取 Giscus 评论系统加载方式
