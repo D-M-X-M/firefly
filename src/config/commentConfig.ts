@@ -2,11 +2,11 @@ import type { CommentConfig } from "../types/commentConfig";
 
 export const commentConfig: CommentConfig = {
 	// 评论系统类型: none, twikoo, waline, giscus, disqus, artalk，默认为none，即不启用评论系统
-	type: "none",
+	type: "twikoo",
 
 	//twikoo评论系统配置
 	twikoo: {
-		envId: "https://twikoo.vercel.app",
+		envId: "https://loquacious-wisp-464bdb.netlify.app",
 		// 设置 Twikoo 评论系统语言
 		lang: "zh-CN",
 		// 是否启用文章访问量统计功能
@@ -54,7 +54,7 @@ export const commentConfig: CommentConfig = {
 	//giscus评论系统配置
 	giscus: {
 		// 设置 Giscus 评论系统仓库
-		repo: "CuteLeaf/Firefly",
+		repo: "D-M-X-M/firefly",
 		// 设置 Giscus 评论系统仓库ID
 		repoId: "R_kgD2gfdFGd",
 		// 设置 Giscus 评论系统分类
