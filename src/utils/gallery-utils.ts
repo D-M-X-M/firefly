@@ -27,13 +27,14 @@ export function scanAlbumPhotos(albumId: string): string[] {
 	const files = fs
 		.readdirSync(dir)
 		.filter((f) => /\.(jpe?g|png|webp|avif|gif)$/i.test(f))
+		.filter((f) => !/^cover\./i.test(f))
 		.sort();
 	// 将 cover.* 排到第一位
-	const coverIdx = files.findIndex((f) => /^cover\./i.test(f));
-	if (coverIdx > 0) {
-		const [coverFile] = files.splice(coverIdx, 1);
-		files.unshift(coverFile);
-	}
+	// const coverIdx = files.findIndex((f) => /^cover\./i.test(f));
+	// if (coverIdx > 0) {
+	// 	const [coverFile] = files.splice(coverIdx, 1);
+	// 	files.unshift(coverFile);
+	// }
 	const localPhotos = files.map((f) => withBase(`/gallery/${albumId}/${f}`));
 
 	// 读取 urls.txt 中的远程图片 URL
@@ -53,9 +54,28 @@ export function scanAlbumPhotos(albumId: string): string[] {
 /**
  * 获取相册封面图
  * 优先级：手动指定 > cover.* 文件 > 第一张图片
- */
 export function getAlbumCover(album: GalleryAlbum, photos: string[]): string {
 	if (album.cover) return withBase(album.cover);
 	const coverFile = photos.find((p) => /\/cover\./i.test(p));
 	return coverFile || photos[0] || "";
+}
+ */
+
+export function getAlbumCover(album: GalleryAlbum, photos: string[]): string {
+    // 1. 优先使用手动指定的封面
+    if (album.cover) return withBase(album.cover);
+
+    // 2. 直接从文件系统查找 cover.*
+    const dir = path.join(process.cwd(), "public", "gallery", album.id);
+    if (fs.existsSync(dir)) {
+        const coverFile = fs
+            .readdirSync(dir)
+            .find((f) => /^cover\./i.test(f));
+        if (coverFile) {
+            return withBase(`/gallery/${album.id}/${coverFile}`);
+        }
+    }
+
+    // 3. 回退到第一张图片
+    return photos[0] || "";
 }
