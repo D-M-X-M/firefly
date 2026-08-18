@@ -15,8 +15,10 @@ async function getRawSortedPosts() {
 		if (!a.data.pinned && b.data.pinned) return 1;
 
 		// 如果置顶状态相同，则按发布日期排序
-		const dateA = new Date(a.data.published);
-		const dateB = new Date(b.data.published);
+		// const dateA = new Date(a.data.published);
+		// const dateB = new Date(b.data.published);
+		const dateA = a.data.updated ? new Date(a.data.updated) : new Date(a.data.published);
+    	const dateB = b.data.updated ? new Date(b.data.updated) : new Date(b.data.published);
 		return dateA > dateB ? -1 : 1;
 	});
 	return sorted;

@@ -16,12 +16,15 @@ cleanup() {
 }
 trap cleanup SIGINT SIGTERM
 
-echo "🌐 检查 GitHub 网络连通性..."
-if ! ping -c 2 github.com &>/dev/null; then
-    echo "❌ 无法连接到 GitHub，请检查网络后重试。"
+echo "🌐 检查 GitHub 仓库连通性..."
+# 使用 git ls-remote 来验证是否可以连接到远程仓库
+if ! git ls-remote origin &>/dev/null; then
+    echo "❌ 无法连接到 GitHub 仓库，请检查网络或认证设置。"
+    echo "   （提示：确保已正确配置 Git 凭据，或使用 SSH 方式）"
     rmdir "$LOCK_DIR" 2>/dev/null
     exit 1
 fi
+echo "✅ GitHub 仓库连通正常。"
 
 echo "📦 正在检查修改..."
 if git diff --quiet && git diff --staged --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then
@@ -49,7 +52,7 @@ git push origin main
 if [ $? -eq 0 ]; then
     echo "✅ 部署完成！等待 1-2 分钟 Cloudflare Pages 自动构建。"
 else
-    echo "❌ 推送失败，请检查网络后重试。"
+    echo "❌ 推送失败，请检查网络或认证后重试。"
 fi
 
 rmdir "$LOCK_DIR" 2>/dev/null
