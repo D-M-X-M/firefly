@@ -4,13 +4,13 @@ import type { SakuraConfig } from "../types/effectsConfig";
 
 export const sakuraConfig: SakuraConfig = {
 	// 是否启用樱花特效
-	enable: false,
+	enable: true,
 
 	// 樱花数量
-	sakuraNum: 21,
+	sakuraNum: 13,
 
 	// 樱花越界限制次数，-1为无限循环
-	limitTimes: -1,
+	limitTimes: 5,//-1,
 
 	// 樱花尺寸
 	size: {
@@ -23,9 +23,9 @@ export const sakuraConfig: SakuraConfig = {
 	// 樱花不透明度
 	opacity: {
 		// 樱花最小不透明度
-		min: 0.3,
+		min: 0.1,
 		// 樱花最大不透明度
-		max: 0.9,
+		max: 0.5,
 	},
 
 	// 樱花移动速度
@@ -45,9 +45,9 @@ export const sakuraConfig: SakuraConfig = {
 			max: 2.2,
 		},
 		// 旋转速度
-		rotation: 0.03,
+		rotation: 0.02,
 		// 消失速度，不应大于最小不透明度
-		fadeSpeed: 0.03,
+		fadeSpeed: 0.09,
 	},
 
 	// 层级，确保樱花在合适的层级显示
