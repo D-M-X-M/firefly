@@ -39,5 +39,11 @@ export const profileConfig: ProfileConfig = {
 			url: "mailto:2016877928@qq.com",
 			showName: false,
 		},
+		{
+			name: "RSS",
+			icon: "fa7-solid:rss",
+			url: "/rss/",
+			showName: false,
+		},
 	],
 };
