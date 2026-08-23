@@ -7,10 +7,10 @@ export const sakuraConfig: SakuraConfig = {
 	enable: true,
 
 	// 樱花数量
-	sakuraNum: 13,
+	sakuraNum: 10,
 
 	// 樱花越界限制次数，-1为无限循环
-	limitTimes: 5,//-1,
+	limitTimes: -1,//-1,
 
 	// 樱花尺寸
 	size: {
@@ -25,7 +25,7 @@ export const sakuraConfig: SakuraConfig = {
 		// 樱花最小不透明度
 		min: 0.1,
 		// 樱花最大不透明度
-		max: 0.5,
+		max: 0.2,
 	},
 
 	// 樱花移动速度
