@@ -616,3 +616,22 @@ html {
 .pagination-info {
   @apply text-sm text-(--text-secondary) text-center mb-2;
 }
+
+
+
+
+
+
+/* ===== 全站黑白灰滤镜（彻底版） ===== */
+/* 直接加在 html 上，连固定定位的背景也不会漏掉 */
+html {
+  filter: grayscale(100%);
+}
+
+/* 
+ * 【可选】如果你希望文章里的图片、视频还是彩色的，保留下面这行；
+ * 如果希望图片也是黑白灰的，就把下面这行删掉。
+ */
+img, video, canvas {
+  filter: grayscale(0%) !important;
+}
